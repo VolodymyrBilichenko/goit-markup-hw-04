@@ -34,7 +34,7 @@ body {
   overflow: hidden;
 }
 
-.container{
+.container {
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
@@ -42,7 +42,7 @@ body {
   margin-right: auto;
 }
 
-.btn{
+.btn {
   display: inline-block;
   font-family: inherit;
   border: 0;
@@ -93,7 +93,7 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #4D5AE5;
+  color: var(--iris-blue);
 }
 
 .logotype span {
@@ -114,7 +114,7 @@ button {
   margin-right: 40px;
 }
 
-.header .header-menu li:last-child{
+.header .header-menu li:last-child {
   margin-right: 0;
 }
 
@@ -135,26 +135,34 @@ button {
   margin-left: auto;
 }
 
-.header .header-social a{
+.header .header-social a {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--slate-grey);
+  transition: all 0.3s ease;
 }
 
-.header .header-social li{
+.header .header-social a:hover{
+  color: var(--ocean-blue);
+}
+
+.header .header-social li {
   margin-right: 40px;
 }
 
-.header .header-social li:last-child{
+.header .header-social li:last-child {
   margin-right: 0;
 }
 
 .banner {
   padding: 184px 0;
   text-align: center;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bgd-banner.png) no-repeat;
+  background: var(--navy-blue);
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/bgd-banner.png);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .banner h1 {
@@ -174,19 +182,24 @@ button {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--white);
-  background: var(--iris-blue);
+  background-color: var(--iris-blue);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 16px 32px;
   margin: 0 auto;
   margin-top: 48px;
+  transition: all 0.3s ease;
+}
+
+.banner button:hover{
+  background-color: var(--ocean-blue);
 }
 
 .info {
   padding-top: 120px;
 }
 
-.info .info-main{
+.info .info-main {
   display: flex;
   gap: 24px;
 }
@@ -212,6 +225,22 @@ button {
   color: var(--slate-grey);
 }
 
+.info .info-block .info-block-head{
+  background: var(--cloud-white);
+  border-radius: 4px;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.info .info-block .block-head-icon{
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+
 .title-h2 {
   font-weight: 700;
   font-size: 36px;
@@ -226,7 +255,8 @@ button {
 .doing {
   padding: 120px 0;
 }
-.doing .doing-photo{
+
+.doing .doing-photo {
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -243,12 +273,39 @@ button {
   gap: 24px;
   flex-wrap: wrap;
 }
-.team .staff li {
+
+.team .staff .staff-card {
   background: var(--white);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
   text-align: center;
-  padding-bottom: 32px;
+}
+
+.team .staff .staff-name {
+  padding: 32px 16px;
+}
+
+.team .staff .staff-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.team .staff-social .social-link{
+  background-color: var(--iris-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.team .staff-social .social-link:hover{
+  background-color: var(--ocean-blue);
 }
 
 .team .staff h3 {
@@ -257,7 +314,7 @@ button {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
-  margin: 32px 0 8px;
+  margin-bottom: 8px;
 }
 
 .team .staff p {
@@ -267,9 +324,43 @@ button {
   color: var(--slate-grey);
 }
 
+.customers{
+  padding: 120px 0;
+}
+.customers .customers-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.customers .list-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: 1px solid #8E8F99;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.customers svg{
+  fill: #AFB1B8;
+  transition: all 0.3s ease;
+}
+.customers .list-link:hover{
+  border-color: var(--ocean-blue);
+}
+.customers .list-link:hover svg{
+  fill: var(--ocean-blue);
+}
+
 .footer {
   padding: 100px 0;
   background: var(--navy-blue);
+}
+
+.footer .footer-inner{
+  display: flex;
+  gap: 120px;
 }
 
 .footer .logotype span {
@@ -286,6 +377,30 @@ button {
   margin-top: 16px;
 }
 
+.footer .footer-social p{
+  font-weight: 500;
+  color: var(--white);
+  margin: 0;
+}
+.footer .footer-media{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+.footer .footer-media a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+.footer .footer-media a:hover{
+  background-color: #31D0AA;
+}
 
 /*portfolio*/
 
@@ -293,14 +408,11 @@ button {
   padding: 96px 0 120px;
 }
 
-.portfolio .portfolio-menu{
+.portfolio .portfolio-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.portfolio .portfolio-menu li {
-  margin: 0 12px;
-  padding: 12px 0px;
+  gap: 24px;
 }
 
 .portfolio .portfolio-menu button {
@@ -338,10 +450,23 @@ button {
   gap: 48px 24px;
 }
 
-.portfolio .portfolio-item li {
-  padding-bottom: 32px;
-  background: var(--white);
+.portfolio .portfolio-item a {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio-item a:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio .portfolio-item .item-info {
+  padding: 32px 16px;
   border: 1px solid var(--frover-white);
+  border-top: none;
+}
+
+.portfolio .portfolio-item li {
+  background: var(--white);
 }
 
 .portfolio .portfolio-item h2 {
@@ -350,8 +475,7 @@ button {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
-  margin: 32px 0 8px;
-  margin-left: 16px;
+  margin-bottom: 8px;
 }
 
 .portfolio .portfolio-item p {
@@ -359,5 +483,4 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--slate-grey);
-  margin-left: 16px;
 }
